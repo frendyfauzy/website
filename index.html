@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ValzStore | Hosting SA-MP Ryzen 9 9900X</title>
+    <title>ValzStore | Hosting SA-MP & Bot High Performance</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -29,6 +29,20 @@
             transform: translateY(-5px);
             transition: all 0.3s ease;
         }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .tab-btn.active {
+            background-color: #2563eb;
+            color: white;
+            border-color: #2563eb;
+        }
     </style>
 </head>
 <body class="bg-slate-900 text-slate-50 selection:bg-blue-600 selection:text-white">
@@ -45,8 +59,8 @@
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#beranda" class="text-slate-300 hover:text-white transition">Beranda</a>
-                    <a href="#fitur" class="text-slate-300 hover:text-white transition">Fitur</a>
-                    <a href="#harga" class="text-slate-300 hover:text-white transition">Harga</a>
+                    <a href="#fitur" class="text-slate-300 hover:text-white transition">Keunggulan</a>
+                    <a href="#harga" class="text-slate-300 hover:text-white transition">Produk</a>
                     <a href="https://discord.gg/kcg6y9P4b7" target="_blank" class="text-slate-300 hover:text-white transition">Client Area</a>
                     <a href="https://discord.gg/kcg6y9P4b7" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full font-semibold transition duration-300">
                         Pesan Sekarang
@@ -76,24 +90,307 @@
         <div class="max-w-7xl mx-auto text-center">
             <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 text-blue-400 text-sm font-bold mb-8 border border-blue-500/20">
                 <i class="fas fa-bolt"></i>
-                <span>Ditenagai oleh AMD Ryzen™ 9 9900X (High Performance)</span>
+                <span>Premium Hosting Solution | Ryzen 9 Series</span>
             </div>
             <h1 class="text-4xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
-                Hosting SA-MP <br>
+                Solusi Hosting <br>
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">
-                    Tanpa Lag, Anti Overload.
+                    High Performance.
                 </span>
             </h1>
             <p class="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed">
-                Bangun komunitas San Andreas Multiplayer impianmu di <strong>samp-ryzen.com</strong>. Performa CPU kelas dunia dengan perlindungan Gcore DDoS Protection 24/7.
+                Dari SA-MP Budget hingga Dedicated Server. Infrastruktur terbaik dengan perlindungan Gcore DDoS Protection 24/7 untuk stabilitas maksimal.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#harga" class="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full font-bold text-lg transition shadow-lg shadow-blue-600/30 flex items-center justify-center gap-2">
-                    Lihat Paket Hosting <i class="fas fa-chevron-right text-sm"></i>
+                    Lihat Semua Produk <i class="fas fa-shopping-cart text-sm"></i>
                 </a>
                 <a href="https://discord.gg/kcg6y9P4b7" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-white px-10 py-4 rounded-full font-bold text-lg transition flex items-center justify-center gap-2 border border-slate-700">
-                    <i class="fab fa-discord"></i> Join Discord
+                    <i class="fab fa-discord"></i> Join Discord Support
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section with Tabs -->
+    <section id="harga" class="py-24">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Pilih Layanan Anda</h2>
+                <p class="text-slate-400 mb-10">Kami menyediakan berbagai kategori layanan yang bisa disesuaikan dengan budget dan kebutuhan Anda.</p>
+                
+                <!-- Tab Navigation -->
+                <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-12">
+                    <button onclick="openTab('samp-budget')" class="tab-btn active px-6 py-3 rounded-xl border border-slate-700 font-bold text-sm transition transition-all duration-300 hover:border-blue-500">
+                        <i class="fas fa-wallet mr-2"></i> SA-MP Budget
+                    </button>
+                    <button onclick="openTab('samp-cloud')" class="tab-btn px-6 py-3 rounded-xl border border-slate-700 font-bold text-sm transition transition-all duration-300 hover:border-blue-500">
+                        <i class="fas fa-cloud mr-2"></i> SA-MP Cloud
+                    </button>
+                    <button onclick="openTab('samp-dedicated')" class="tab-btn px-6 py-3 rounded-xl border border-slate-700 font-bold text-sm transition transition-all duration-300 hover:border-blue-500">
+                        <i class="fas fa-microchip mr-2"></i> Dedicated
+                    </button>
+                    <button onclick="openTab('bot-hosting')" class="tab-btn px-6 py-3 rounded-xl border border-slate-700 font-bold text-sm transition transition-all duration-300 hover:border-blue-500">
+                        <i class="fas fa-robot mr-2"></i> Bot Hosting
+                    </button>
+                    <button onclick="openTab('reseller')" class="tab-btn px-6 py-3 rounded-xl border border-slate-700 font-bold text-sm transition transition-all duration-300 hover:border-blue-500">
+                        <i class="fas fa-users mr-2"></i> Reseller
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab: SA-MP Budget -->
+            <div id="samp-budget" class="tab-content active animate-in fade-in duration-500">
+                <div class="text-center mb-8">
+                    <span class="bg-blue-500/10 text-blue-400 px-4 py-1 rounded-full text-xs font-bold border border-blue-500/20 uppercase">Stabil, Kencang, Terjangkau</span>
+                    <p class="text-slate-400 mt-4 text-sm max-w-2xl mx-auto">Ditenagai AMD Ryzen 9 9900X dengan Limited CPU Load untuk stabilitas maksimal server baru berkembang.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Budget Cards -->
+                    <div class="bg-slate-800 rounded-3xl p-6 border border-slate-700 pricing-card">
+                        <h3 class="text-lg font-bold mb-1">Budget 1</h3>
+                        <div class="text-2xl font-black mb-4 text-blue-400">Rp 30.000</div>
+                        <ul class="text-xs space-y-3 mb-6 text-slate-300">
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i> 25 Slot Player</li>
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i> AMD Ryzen 9 9900X</li>
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i> Unlimited RAM</li>
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i> Port Random</li>
+                        </ul>
+                        <a href="https://discord.gg/kcg6y9P4b7" target="_blank" class="block w-full text-center bg-blue-600 hover:bg-blue-700 py-2 rounded-lg font-bold text-sm">Pesan</a>
+                    </div>
+                    <div class="bg-slate-800 rounded-3xl p-6 border border-slate-700 pricing-card">
+                        <h3 class="text-lg font-bold mb-1">Budget 2</h3>
+                        <div class="text-2xl font-black mb-4 text-blue-400">Rp 60.000</div>
+                        <ul class="text-xs space-y-3 mb-6 text-slate-300">
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i> 50 Slot Player</li>
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i> Free Setup & Install GM</li>
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i> Free Basic Optimasi</li>
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i> Support Responsif</li>
+                        </ul>
+                        <a href="https://discord.gg/kcg6y9P4b7" target="_blank" class="block w-full text-center bg-blue-600 hover:bg-blue-700 py-2 rounded-lg font-bold text-sm">Pesan</a>
+                    </div>
+                    <div class="bg-slate-800 rounded-3xl p-6 border border-slate-700 pricing-card">
+                        <h3 class="text-lg font-bold mb-1">Budget 3</h3>
+                        <div class="text-2xl font-black mb-4 text-blue-400">Rp 100.000</div>
+                        <ul class="text-xs space-y-3 mb-6 text-slate-300">
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i> 100 Slot Player</li>
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i> Free Setup & Optimasi</li>
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i> Unlimited RAM</li>
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i> Support Prioritas</li>
+                        </ul>
+                        <a href="https://discord.gg/kcg6y9P4b7" target="_blank" class="block w-full text-center bg-blue-600 hover:bg-blue-700 py-2 rounded-lg font-bold text-sm">Pesan</a>
+                    </div>
+                    <div class="bg-slate-800 rounded-3xl p-6 border border-slate-700 pricing-card">
+                        <h3 class="text-lg font-bold mb-1">Budget 4</h3>
+                        <div class="text-2xl font-black mb-4 text-blue-400">Rp 180.000</div>
+                        <ul class="text-xs space-y-3 mb-6 text-slate-300">
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i> 200 Slot Player</li>
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i> Performa Ryzen 9</li>
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i> Full Managed Bonus</li>
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i> Cocok Jangka Panjang</li>
+                        </ul>
+                        <a href="https://discord.gg/kcg6y9P4b7" target="_blank" class="block w-full text-center bg-blue-600 hover:bg-blue-700 py-2 rounded-lg font-bold text-sm">Pesan</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: SA-MP Cloud -->
+            <div id="samp-cloud" class="tab-content animate-in fade-in duration-500">
+                <div class="text-center mb-8">
+                    <span class="bg-indigo-500/10 text-indigo-400 px-4 py-1 rounded-full text-xs font-bold border border-indigo-500/20 uppercase">Paling Stabil & Kencang</span>
+                    <p class="text-slate-400 mt-4 text-sm max-w-2xl mx-auto">Resource Cloud dengan High CPU Load Ryzen 9 9900X (Best Performance) untuk komunitas profesional.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-slate-800 rounded-3xl p-6 border border-slate-700 pricing-card">
+                        <h3 class="text-lg font-bold mb-1">Cloud 25</h3>
+                        <div class="text-2xl font-black mb-4 text-indigo-400">Rp 60.000</div>
+                        <ul class="text-xs space-y-3 mb-6 text-slate-300">
+                            <li><i class="fas fa-check text-indigo-500 mr-2"></i> 25 Slot Player</li>
+                            <li><i class="fas fa-bolt text-indigo-500 mr-2"></i> High CPU Load</li>
+                            <li><i class="fas fa-check text-indigo-500 mr-2"></i> Unlimited RAM</li>
+                        </ul>
+                        <a href="https://discord.gg/kcg6y9P4b7" target="_blank" class="block w-full text-center bg-indigo-600 hover:bg-indigo-700 py-2 rounded-lg font-bold text-sm">Pesan</a>
+                    </div>
+                    <div class="bg-slate-800 rounded-3xl p-6 border border-slate-700 pricing-card">
+                        <h3 class="text-lg font-bold mb-1">Cloud 50</h3>
+                        <div class="text-2xl font-black mb-4 text-indigo-400">Rp 120.000</div>
+                        <ul class="text-xs space-y-3 mb-6 text-slate-300">
+                            <li><i class="fas fa-check text-indigo-500 mr-2"></i> 50 Slot Player</li>
+                            <li><i class="fas fa-bolt text-indigo-500 mr-2"></i> Ryzen 9 9900X</li>
+                            <li><i class="fas fa-gift text-indigo-500 mr-2"></i> Semua Bonus Setup</li>
+                        </ul>
+                        <a href="https://discord.gg/kcg6y9P4b7" target="_blank" class="block w-full text-center bg-indigo-600 hover:bg-indigo-700 py-2 rounded-lg font-bold text-sm">Pesan</a>
+                    </div>
+                    <div class="bg-slate-800 rounded-3xl p-6 border border-slate-700 pricing-card border-indigo-500/50">
+                        <h3 class="text-lg font-bold mb-1">Cloud 100</h3>
+                        <div class="text-2xl font-black mb-4 text-indigo-400">Rp 200.000</div>
+                        <ul class="text-xs space-y-3 mb-6 text-slate-300">
+                            <li><i class="fas fa-check text-indigo-500 mr-2"></i> 100 Slot Player</li>
+                            <li><i class="fas fa-bolt text-indigo-500 mr-2"></i> Best Performance</li>
+                            <li><i class="fas fa-check text-indigo-500 mr-2"></i> Priority Support</li>
+                        </ul>
+                        <a href="https://discord.gg/kcg6y9P4b7" target="_blank" class="block w-full text-center bg-indigo-600 hover:bg-indigo-700 py-2 rounded-lg font-bold text-sm">Pesan</a>
+                    </div>
+                    <div class="bg-slate-800 rounded-3xl p-6 border border-slate-700 pricing-card">
+                        <h3 class="text-lg font-bold mb-1">Cloud 200</h3>
+                        <div class="text-2xl font-black mb-4 text-indigo-400">Rp 300.000</div>
+                        <ul class="text-xs space-y-3 mb-6 text-slate-300">
+                            <li><i class="fas fa-check text-indigo-500 mr-2"></i> 200 Slot Player</li>
+                            <li><i class="fas fa-shield-alt text-indigo-500 mr-2"></i> Gcore Anti DDoS</li>
+                            <li><i class="fas fa-check text-indigo-500 mr-2"></i> Singapore DC</li>
+                        </ul>
+                        <a href="https://discord.gg/kcg6y9P4b7" target="_blank" class="block w-full text-center bg-indigo-600 hover:bg-indigo-700 py-2 rounded-lg font-bold text-sm">Pesan</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: SA-MP Dedicated -->
+            <div id="samp-dedicated" class="tab-content animate-in fade-in duration-500">
+                <div class="text-center mb-8">
+                    <span class="bg-emerald-500/10 text-emerald-400 px-4 py-1 rounded-full text-xs font-bold border border-emerald-500/20 uppercase">Private Node & Port 7777</span>
+                    <p class="text-slate-400 mt-4 text-sm max-w-2xl mx-auto">Gunakan node private dengan Custom Slot, Port Default 7777, dan Unlimited CPU Load Ryzen 9 9950X.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-slate-800 rounded-3xl p-6 border border-slate-700 pricing-card">
+                        <h3 class="text-lg font-bold mb-1">Dedicated 1</h3>
+                        <div class="text-2xl font-black mb-4 text-emerald-400">Rp 450.000</div>
+                        <ul class="text-xs space-y-3 mb-6 text-slate-300">
+                            <li><i class="fas fa-user-plus text-emerald-500 mr-2"></i> Custom Player Slot</li>
+                            <li><i class="fas fa-check text-emerald-500 mr-2"></i> Port Default: 7777</li>
+                            <li><i class="fas fa-microchip text-emerald-500 mr-2"></i> Ryzen 9 7900X/9900X</li>
+                        </ul>
+                        <a href="https://discord.gg/kcg6y9P4b7" target="_blank" class="block w-full text-center bg-emerald-600 hover:bg-emerald-700 py-2 rounded-lg font-bold text-sm">Pesan</a>
+                    </div>
+                    <div class="bg-slate-800 rounded-3xl p-6 border border-slate-700 pricing-card">
+                        <h3 class="text-lg font-bold mb-1">Dedicated 2</h3>
+                        <div class="text-2xl font-black mb-4 text-emerald-400">Rp 650.000</div>
+                        <ul class="text-xs space-y-3 mb-6 text-slate-300">
+                            <li><i class="fas fa-user-plus text-emerald-500 mr-2"></i> Custom Player Slot</li>
+                            <li><i class="fas fa-microchip text-emerald-500 mr-2"></i> Ryzen 9 9900X Series</li>
+                            <li><i class="fas fa-bolt text-emerald-500 mr-2"></i> Unlimited CPU Load</li>
+                        </ul>
+                        <a href="https://discord.gg/kcg6y9P4b7" target="_blank" class="block w-full text-center bg-emerald-600 hover:bg-emerald-700 py-2 rounded-lg font-bold text-sm">Pesan</a>
+                    </div>
+                    <div class="bg-slate-800 rounded-3xl p-6 border border-slate-700 pricing-card">
+                        <h3 class="text-lg font-bold mb-1">Dedicated 3</h3>
+                        <div class="text-2xl font-black mb-4 text-emerald-400">Rp 850.000</div>
+                        <ul class="text-xs space-y-3 mb-6 text-slate-300">
+                            <li><i class="fas fa-user-plus text-emerald-500 mr-2"></i> Custom Player Slot</li>
+                            <li><i class="fas fa-microchip text-emerald-500 mr-2"></i> Ryzen 9 9950X</li>
+                            <li><i class="fas fa-star text-emerald-500 mr-2"></i> Private Node Service</li>
+                        </ul>
+                        <a href="https://discord.gg/kcg6y9P4b7" target="_blank" class="block w-full text-center bg-emerald-600 hover:bg-emerald-700 py-2 rounded-lg font-bold text-sm">Pesan</a>
+                    </div>
+                    <div class="bg-slate-800 rounded-3xl p-6 border border-slate-700 pricing-card border-emerald-500/50">
+                        <h3 class="text-lg font-bold mb-1">Dedicated 4</h3>
+                        <div class="text-2xl font-black mb-4 text-emerald-400">Rp 1.350.000</div>
+                        <ul class="text-xs space-y-3 mb-6 text-slate-300">
+                            <li><i class="fas fa-user-plus text-emerald-500 mr-2"></i> Custom Player Slot</li>
+                            <li><i class="fas fa-crown text-emerald-500 mr-2"></i> Highest Node Specs</li>
+                            <li><i class="fas fa-check text-emerald-500 mr-2"></i> Full Managed Support</li>
+                        </ul>
+                        <a href="https://discord.gg/kcg6y9P4b7" target="_blank" class="block w-full text-center bg-emerald-600 hover:bg-emerald-700 py-2 rounded-lg font-bold text-sm">Pesan</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Bot Hosting -->
+            <div id="bot-hosting" class="tab-content animate-in fade-in duration-500">
+                <div class="text-center mb-8">
+                    <span class="bg-purple-500/10 text-purple-400 px-4 py-1 rounded-full text-xs font-bold border border-purple-500/20 uppercase">Bot JS & Python Ready</span>
+                    <p class="text-slate-400 mt-4 text-sm max-w-2xl mx-auto">Hosting bot yang stabil dengan pilihan Datacenter Indonesia (ID) atau Singapore (SG).</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    <div class="bg-slate-800 rounded-3xl p-8 border border-slate-700 pricing-card">
+                        <h3 class="text-xl font-bold mb-1">Bot Hosting Low</h3>
+                        <div class="text-3xl font-black mb-6 text-purple-400">Rp 20.000</div>
+                        <ul class="text-sm space-y-4 mb-8 text-slate-300">
+                            <li><i class="fas fa-check text-purple-500 mr-2"></i> Limited CPU Load</li>
+                            <li><i class="fas fa-check text-purple-500 mr-2"></i> Unlimited RAM</li>
+                            <li><i class="fas fa-check text-purple-500 mr-2"></i> DC ID / SG</li>
+                            <li><i class="fas fa-check text-purple-500 mr-2"></i> Free Setup Bot JS</li>
+                        </ul>
+                        <a href="https://discord.gg/kcg6y9P4b7" target="_blank" class="block w-full text-center bg-purple-600 hover:bg-purple-700 py-3 rounded-xl font-bold transition">Pesan</a>
+                    </div>
+                    <div class="bg-slate-800 rounded-3xl p-8 border border-slate-700 pricing-card border-purple-500/50">
+                        <h3 class="text-xl font-bold mb-1">Bot Hosting Medium</h3>
+                        <div class="text-3xl font-black mb-6 text-purple-400">Rp 35.000</div>
+                        <ul class="text-sm space-y-4 mb-8 text-slate-300">
+                            <li><i class="fas fa-check text-purple-500 mr-2"></i> Lebih Stabil & Kencang</li>
+                            <li><i class="fas fa-check text-purple-500 mr-2"></i> Unlimited RAM</li>
+                            <li><i class="fas fa-check text-purple-500 mr-2"></i> Anti DDoS Protection</li>
+                            <li><i class="fas fa-check text-purple-500 mr-2"></i> Free Basic Optimasi</li>
+                        </ul>
+                        <a href="https://discord.gg/kcg6y9P4b7" target="_blank" class="block w-full text-center bg-purple-600 hover:bg-purple-700 py-3 rounded-xl font-bold transition">Pesan</a>
+                    </div>
+                    <div class="bg-slate-800 rounded-3xl p-8 border border-slate-700 pricing-card">
+                        <h3 class="text-xl font-bold mb-1">Bot Hosting High</h3>
+                        <div class="text-3xl font-black mb-6 text-purple-400">Rp 50.000</div>
+                        <ul class="text-sm space-y-4 mb-8 text-slate-300">
+                            <li><i class="fas fa-check text-purple-500 mr-2"></i> Performa Maksimal</li>
+                            <li><i class="fas fa-check text-purple-500 mr-2"></i> Unlimited RAM</li>
+                            <li><i class="fas fa-check text-purple-500 mr-2"></i> Cocok Jangka Panjang</li>
+                            <li><i class="fas fa-check text-purple-500 mr-2"></i> Support Responsif</li>
+                        </ul>
+                        <a href="https://discord.gg/kcg6y9P4b7" target="_blank" class="block w-full text-center bg-purple-600 hover:bg-purple-700 py-3 rounded-xl font-bold transition">Pesan</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Reseller -->
+            <div id="reseller" class="tab-content animate-in fade-in duration-500">
+                <div class="text-center mb-8">
+                    <span class="bg-amber-500/10 text-amber-400 px-4 py-1 rounded-full text-xs font-bold border border-amber-500/20 uppercase">Private Panel | Bisnis Sendiri</span>
+                    <p class="text-slate-400 mt-4 text-sm max-w-2xl mx-auto">Mulai bisnis hosting Anda sendiri dengan Private Panel. Tersedia Node Intel Xeon dan AMD Ryzen 9.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                    <!-- Intel Xeon Section -->
+                    <div class="space-y-6">
+                        <h4 class="text-xl font-bold text-center text-slate-100 flex items-center justify-center gap-2">
+                            <i class="fas fa-microchip text-blue-400"></i> Intel Xeon (Private Panel)
+                        </h4>
+                        <div class="bg-slate-800 rounded-3xl p-8 border border-slate-700 pricing-card flex justify-between items-center">
+                            <div>
+                                <h3 class="text-xl font-bold">Reseller 1</h3>
+                                <p class="text-sm text-slate-400">Intel Xeon Processor</p>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-2xl font-black text-amber-400">Rp 100.000</div>
+                                <a href="https://discord.gg/kcg6y9P4b7" target="_blank" class="mt-2 inline-block text-xs font-bold text-blue-400 hover:text-blue-300 underline">Order Sekarang</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AMD Ryzen 9 Section -->
+                    <div class="space-y-6">
+                        <h4 class="text-xl font-bold text-center text-slate-100 flex items-center justify-center gap-2">
+                            <i class="fas fa-bolt text-red-400"></i> AMD Ryzen 9 (Private Panel)
+                        </h4>
+                        <div class="grid grid-cols-1 gap-4">
+                            <div class="bg-slate-800 rounded-2xl p-4 border border-slate-700 pricing-card flex justify-between items-center">
+                                <span class="font-bold">Reseller 1</span>
+                                <span class="font-black text-amber-400">Rp 175.000</span>
+                            </div>
+                            <div class="bg-slate-800 rounded-2xl p-4 border border-slate-700 pricing-card flex justify-between items-center">
+                                <span class="font-bold">Reseller 2</span>
+                                <span class="font-black text-amber-400">Rp 300.000</span>
+                            </div>
+                            <div class="bg-slate-800 rounded-2xl p-4 border border-slate-700 pricing-card flex justify-between items-center">
+                                <span class="font-bold">Reseller 3</span>
+                                <span class="font-black text-amber-400">Rp 450.000</span>
+                            </div>
+                            <div class="bg-slate-800 rounded-2xl p-4 border border-slate-700 pricing-card flex justify-between items-center">
+                                <span class="font-bold">Reseller 4</span>
+                                <span class="font-black text-amber-400">Rp 650.000</span>
+                            </div>
+                            <div class="bg-slate-800 rounded-2xl p-4 border border-slate-700 pricing-card flex justify-between items-center">
+                                <span class="font-bold">Reseller 5</span>
+                                <span class="font-black text-amber-400">Rp 850.000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -102,132 +399,32 @@
     <section id="fitur" class="py-24 bg-slate-900/50 border-y border-slate-800">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">Spesifikasi Server</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto">Infrastruktur gaming terbaik yang dioptimalkan untuk performa tinggi jangka panjang.</p>
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">Kenapa ValzStore?</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Keamanan, Kecepatan, dan Layanan Pelanggan adalah prioritas utama kami.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
                 <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700">
-                    <div class="bg-blue-500/20 w-12 h-12 rounded-xl flex items-center justify-center mb-6 text-blue-400">
+                    <div class="bg-blue-500/20 w-16 h-16 rounded-full flex items-center justify-center mb-6 text-blue-400 mx-auto">
                         <i class="fas fa-microchip text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white">Ryzen 9 9900X</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Sistem Limited CPU Load memastikan resource stabil dan mencegah lag akibat overload resource.</p>
+                    <h3 class="text-xl font-bold mb-3 text-white">Ryzen 9 Series</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Menggunakan CPU terbaru 9900X/9950X yang memberikan performa single-core tertinggi untuk server gaming.</p>
                 </div>
                 <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700">
-                    <div class="bg-indigo-500/20 w-12 h-12 rounded-xl flex items-center justify-center mb-6 text-indigo-400">
+                    <div class="bg-indigo-500/20 w-16 h-16 rounded-full flex items-center justify-center mb-6 text-indigo-400 mx-auto">
                         <i class="fas fa-shield-halved text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white">Gcore Protection</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Mitigasi Anti DDoS tangguh dari Gcore untuk menjaga server tetap online saat diserang.</p>
+                    <h3 class="text-xl font-bold mb-3 text-white">Anti-DDoS Gcore</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Proteksi enterprise grade yang memfilter trafik berbahaya secara real-time, membuat server Anda sulit ditumbangkan.</p>
                 </div>
                 <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700">
-                    <div class="bg-purple-500/20 w-12 h-12 rounded-xl flex items-center justify-center mb-6 text-purple-400">
-                        <i class="fas fa-memory text-2xl"></i>
+                    <div class="bg-emerald-500/20 w-16 h-16 rounded-full flex items-center justify-center mb-6 text-emerald-400 mx-auto">
+                        <i class="fas fa-headset text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white">Unlimited RAM</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Tidak perlu khawatir kehabisan memory. Kami berikan akses RAM tanpa batas untuk server Anda.</p>
+                    <h3 class="text-xl font-bold mb-3 text-white">Support Responsif</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Tim kami siap membantu instalasi gamemode, optimasi script, hingga masalah teknis lainnya via Discord.</p>
                 </div>
-                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700">
-                    <div class="bg-emerald-500/20 w-12 h-12 rounded-xl flex items-center justify-center mb-6 text-emerald-400">
-                        <i class="fas fa-globe text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-white">Singapore DC</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Datacenter Singapura menjamin latency (ping) rendah dan stabil untuk pemain dari Indonesia.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="harga" class="py-24">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4">Paket SA-MP Budget</h2>
-                <p class="text-slate-400 mb-8">Pilih paket sesuai kebutuhan komunitas Anda. Stabil, murah, dan profesional.</p>
-                
-                <div class="inline-block bg-slate-800 border border-slate-700 rounded-2xl p-6 text-left shadow-2xl">
-                    <p class="text-blue-400 font-bold mb-4 flex items-center gap-2">
-                        <i class="fas fa-check-circle"></i> Sangat Cocok Untuk:
-                    </p>
-                    <ul class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-slate-300">
-                        <li class="flex items-center gap-2"><i class="fas fa-caret-right text-blue-500"></i> Server baru berkembang</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-caret-right text-blue-500"></i> Community kecil & menengah</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-caret-right text-blue-500"></i> Testing & Production server</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Budget 1 -->
-                <div class="bg-slate-800 rounded-3xl p-8 border border-slate-700 pricing-card">
-                    <h3 class="text-xl font-bold mb-1 text-white">Budget 1</h3>
-                    <div class="text-3xl font-extrabold mb-6">Rp 30.000<span class="text-slate-400 text-sm font-normal">/bln</span></div>
-                    <ul class="space-y-4 mb-8 text-sm text-slate-300">
-                        <li class="flex justify-between"><span>Slot:</span> <span class="font-bold text-white">25 Slot</span></li>
-                        <li class="flex justify-between border-t border-slate-700 pt-2"><span>RAM:</span> <span class="font-bold text-white text-blue-400">Unlimited</span></li>
-                        <li class="flex justify-between border-t border-slate-700 pt-2"><span>Storage:</span> <span class="font-bold text-white">NVMe SSD</span></li>
-                        <li class="flex items-center gap-2 pt-2"><i class="fas fa-check text-green-500"></i> Support .so / .dll</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Anti-DDoS Gcore</li>
-                    </ul>
-                    <a href="https://discord.gg/kcg6y9P4b7" target="_blank" class="block w-full text-center bg-slate-700 hover:bg-slate-600 text-white py-3 rounded-xl font-bold transition">Pesan Sekarang</a>
-                </div>
-
-                <!-- Budget 2 -->
-                <div class="bg-slate-800 rounded-3xl p-8 border border-slate-700 pricing-card">
-                    <h3 class="text-xl font-bold mb-1 text-white">Budget 2</h3>
-                    <div class="text-3xl font-extrabold mb-6">Rp 60.000<span class="text-slate-400 text-sm font-normal">/bln</span></div>
-                    <ul class="space-y-4 mb-8 text-sm text-slate-300">
-                        <li class="flex justify-between"><span>Slot:</span> <span class="font-bold text-white">50 Slot</span></li>
-                        <li class="flex justify-between border-t border-slate-700 pt-2"><span>RAM:</span> <span class="font-bold text-white text-blue-400">Unlimited</span></li>
-                        <li class="flex justify-between border-t border-slate-700 pt-2"><span>Storage:</span> <span class="font-bold text-white">NVMe SSD</span></li>
-                        <li class="flex items-center gap-2 pt-2 text-blue-400 font-bold"><i class="fas fa-gift"></i> Free Setup Server</li>
-                        <li class="flex items-center gap-2 text-blue-400 font-bold"><i class="fas fa-gift"></i> Free Install GM</li>
-                    </ul>
-                    <a href="https://discord.gg/kcg6y9P4b7" target="_blank" class="block w-full text-center bg-slate-700 hover:bg-slate-600 text-white py-3 rounded-xl font-bold transition">Pesan Sekarang</a>
-                </div>
-
-                <!-- Budget 3 -->
-                <div class="bg-slate-800 rounded-3xl p-8 border-2 border-blue-500 shadow-2xl shadow-blue-900/20 pricing-card relative">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-500 text-white text-[10px] font-black uppercase px-3 py-1 rounded-full">Best Choice</div>
-                    <h3 class="text-xl font-bold mb-1 text-white">Budget 3</h3>
-                    <div class="text-3xl font-extrabold mb-6">Rp 100.000<span class="text-slate-400 text-sm font-normal">/bln</span></div>
-                    <ul class="space-y-4 mb-8 text-sm text-slate-300">
-                        <li class="flex justify-between"><span>Slot:</span> <span class="font-bold text-white">100 Slot</span></li>
-                        <li class="flex justify-between border-t border-slate-700 pt-2"><span>RAM:</span> <span class="font-bold text-white text-blue-400">Unlimited</span></li>
-                        <li class="flex justify-between border-t border-slate-700 pt-2 text-blue-400 font-bold"><i class="fas fa-plus-circle"></i> Free Optimasi</li>
-                        <li class="flex items-center gap-2 pt-2"><i class="fas fa-check text-green-500"></i> Support Responsif</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> High Priority Support</li>
-                    </ul>
-                    <a href="https://discord.gg/kcg6y9P4b7" target="_blank" class="block w-full text-center bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-bold transition">Pesan Sekarang</a>
-                </div>
-
-                <!-- Budget 4 -->
-                <div class="bg-slate-800 rounded-3xl p-8 border border-slate-700 pricing-card">
-                    <h3 class="text-xl font-bold mb-1 text-white">Budget 4</h3>
-                    <div class="text-3xl font-extrabold mb-6">Rp 180.000<span class="text-slate-400 text-sm font-normal">/bln</span></div>
-                    <ul class="space-y-4 mb-8 text-sm text-slate-300">
-                        <li class="flex justify-between"><span>Slot:</span> <span class="font-bold text-white">200 Slot</span></li>
-                        <li class="flex justify-between border-t border-slate-700 pt-2"><span>RAM:</span> <span class="font-bold text-white text-blue-400">Unlimited</span></li>
-                        <li class="flex justify-between border-t border-slate-700 pt-2"><span>Storage:</span> <span class="font-bold text-white">NVMe SSD Max</span></li>
-                        <li class="flex items-center gap-2 pt-2 text-blue-400 font-bold"><i class="fas fa-star"></i> Full Bonus Setup</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> All-In Service</li>
-                    </ul>
-                    <a href="https://discord.gg/kcg6y9P4b7" target="_blank" class="block w-full text-center bg-slate-700 hover:bg-slate-600 text-white py-3 rounded-xl font-bold transition">Pesan Sekarang</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="py-20 px-4">
-        <div class="max-w-5xl mx-auto bg-gradient-to-br from-blue-600 to-indigo-700 rounded-[3rem] p-12 text-center relative overflow-hidden shadow-3xl shadow-blue-500/20">
-            <div class="relative z-10">
-                <h2 class="text-3xl md:text-5xl font-extrabold mb-6">Pindah ke ValzStore Sekarang!</h2>
-                <p class="text-blue-100 text-lg mb-10 max-w-2xl mx-auto">Rasakan bedanya hosting dengan CPU Ryzen 9 9900X. Performa stabil, anti-lag, dan support 24 jam.</p>
-                <a href="https://discord.gg/kcg6y9P4b7" target="_blank" class="inline-block bg-white text-blue-700 px-10 py-4 rounded-full font-black text-lg hover:bg-blue-50 transition transform hover:scale-105 shadow-xl">
-                    <i class="fab fa-discord mr-2"></i> KONSULTASI VIA DISCORD
-                </a>
             </div>
         </div>
     </section>
@@ -242,47 +439,70 @@
                         <span class="font-bold text-2xl tracking-tight text-white">Valz<span class="text-blue-500">Store</span></span>
                     </div>
                     <p class="text-slate-400 text-sm max-w-sm leading-relaxed mb-6">
-                        Penyedia layanan Hosting SA-MP (San Andreas Multiplayer) terbaik di Indonesia dengan infrastruktur Ryzen 9 9900X.
+                        Penyedia layanan Hosting High Performance terbaik di Indonesia. Kami mendukung pertumbuhan komunitas game Anda.
                     </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-slate-500 hover:text-blue-400 text-xl transition"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="text-slate-500 hover:text-blue-400 text-xl transition"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-slate-500 hover:text-blue-400 text-xl transition"><i class="fab fa-whatsapp"></i></a>
-                    </div>
                 </div>
                 
                 <div>
-                    <h4 class="font-bold mb-6 text-white uppercase tracking-widest text-xs">Layanan</h4>
+                    <h4 class="font-bold mb-6 text-white uppercase tracking-widest text-xs">Produk</h4>
                     <ul class="space-y-4 text-sm text-slate-400 font-medium">
-                        <li><a href="#" class="hover:text-blue-400 transition">SA-MP Hosting</a></li>
-                        <li><a href="#" class="hover:text-blue-400 transition">Web Hosting</a></li>
-                        <li><a href="#" class="hover:text-blue-400 transition">Domain Murah</a></li>
+                        <li><a href="javascript:openTab('samp-budget')" class="hover:text-blue-400 transition">SA-MP Budget</a></li>
+                        <li><a href="javascript:openTab('samp-cloud')" class="hover:text-blue-400 transition">SA-MP Cloud</a></li>
+                        <li><a href="javascript:openTab('bot-hosting')" class="hover:text-blue-400 transition">Bot Hosting</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="font-bold mb-6 text-white uppercase tracking-widest text-xs">Informasi</h4>
+                    <h4 class="font-bold mb-6 text-white uppercase tracking-widest text-xs">Bantuan</h4>
                     <ul class="space-y-4 text-sm text-slate-400 font-medium">
                         <li><a href="https://discord.gg/kcg6y9P4b7" class="hover:text-blue-400 transition">Discord Support</a></li>
-                        <li><a href="#" class="hover:text-blue-400 transition">TOS & Privacy</a></li>
-                        <li><a href="#" class="hover:text-blue-400 transition">Metode Pembayaran</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Client Area</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Syarat Layanan</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6">
                 <p class="text-slate-500 text-xs">
-                    &copy; 2024 ValzStore - samp-ryzen.com. All rights reserved.
+                    &copy; 2024 ValzStore - High Performance Hosting. All rights reserved.
                 </p>
                 <div class="flex items-center gap-6 text-slate-500 text-xs">
-                    <span class="flex items-center gap-1"><i class="fas fa-bolt text-yellow-500"></i> Powered by AMD Ryzen</span>
-                    <span class="flex items-center gap-1"><i class="fas fa-lock text-emerald-500"></i> Secured by Gcore</span>
+                    <span class="flex items-center gap-1"><i class="fas fa-bolt text-yellow-500"></i> Ryzen 9 Power</span>
+                    <span class="flex items-center gap-1"><i class="fas fa-lock text-emerald-500"></i> Gcore Protection</span>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
+        // Tab System
+        function openTab(tabId) {
+            // Hide all contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Remove active class from buttons
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Show current tab content
+            document.getElementById(tabId).classList.add('active');
+            
+            // Add active class to clicked button
+            const clickedBtn = Array.from(buttons).find(btn => btn.getAttribute('onclick').includes(tabId));
+            if(clickedBtn) clickedBtn.classList.add('active');
+
+            // Scroll to top of pricing section if below
+            const pricingSection = document.getElementById('harga');
+            const rect = pricingSection.getBoundingClientRect();
+            if (rect.top < 0) {
+                window.scrollTo({
+                    top: pricingSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
         // Mobile Menu Toggle
         const btn = document.getElementById('mobile-menu-button');
         const menu = document.getElementById('mobile-menu');
