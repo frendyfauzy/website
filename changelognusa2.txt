@@ -1,1 +1,24 @@
 
+CHANGELOG - GTA SAMP SERVER UPDATE
+
+==================================================
+[INFORMASI SOURCE CODE & TIM]
+==================================================
+* Source Code Base : JAMES SAMP
+* Owner Server     : MR_Killer
+* Scripter         : Rivalz
+==================================================
+
+[DAFTAR PERUBAHAN / UPDATES]
+--------------------------------------------------
+* PERBAIKAN (BUG FIXES)
+  - Perbaikan Monetloader: Mengatasi masalah crash saat memuat script pihak ketiga dan meningkatkan stabilitas sistem.
+  - Perbaikan Cleo: Optimalisasi kompatibilitas library Cleo agar fungsi modifikasi berjalan lebih lancar tanpa lag.
+  - Perbaikan Modloader: Memperbaiki sistem pembacaan file mod agar aset kendaraan, skin, dan map termuat dengan benar.
+
+* PEMBARUAN (FEATURES & UI)
+  - Memperbarui tampilan UI Launcher: Desain antarmuka baru yang lebih modern, bersih, interaktif, dan ramah pengguna (user-friendly).
+
+--------------------------------------------------
+Catatan: Pastikan semua pemain melakukan update berkala melalui launcher resmi untuk menghindari kegagalan sinkronisasi (mismatch file) saat masuk ke dalam server.
+==================================================
